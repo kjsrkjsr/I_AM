@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I AM | 싸피즈 선정 2026 최고의 여행지  </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oceanBlue: '#0077B6',
+                        oceanDark: '#005F92',
+                        oceanLight: '#E0F2FE',
+                        sunYellow: '#FFD166',
+                        sunOrange: '#F7B267',
+                        navyDark: '#03045E',
+                    },
+                    fontFamily: {
+                        sans: ['SamsungOne', 'One UI Sans', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8FAFC;
+        }
+        .wave-bg {
+            background: linear-gradient(180deg, #0077B6 0%, #03045E 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 209, 102, 0.7); 
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0077B6;
+            border-radius: 4px;
+        }
+        /* Tab transitions */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Profile lock animation pulse */
+        .lock-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm" id="mainHeader">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-2xl font-black text-oceanBlue tracking-tighter">I AM <span class="text-navyDark text-lg font-bold bg-sunYellow px-2.5 py-0.5 rounded ml-1">속초</span></span>
+            </a>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#hero" class="hover:text-oceanBlue transition-colors">홈</a>
+                <a href="#curation" class="hover:text-oceanBlue transition-colors">로컬 큐레이션</a>
+                <a href="#about" class="hover:text-oceanBlue transition-colors">큐레이터 소개</a>
+                <a href="#quiz" class="hover:text-oceanBlue transition-colors">시크릿 퀴즈</a>
+                <a href="#networking" class="hover:text-oceanBlue transition-colors">네트워킹</a>
+            </nav>
+            <a href="#quiz" class="bg-oceanBlue hover:bg-oceanDark text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                퀴즈 풀고 선물 받기 🎁
+            </a>
+        </div>
+    </header>
+
+    <section id="hero" class="wave-bg text-white pt-28 pb-20 md:pt-36 md:pb-28 relative overflow-hidden">
+        <div class="absolute w-72 h-72 bg-white/5 rounded-full -top-12 -left-12 blur-2xl pointer-events-none"></div>
+        <div class="absolute w-96 h-96 bg-sunYellow/10 rounded-full bottom-0 right-0 blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <span class="inline-block bg-sunYellow text-navyDark text-xs md:text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider shadow-sm animate-bounce">
+                ☀️ 2026 싸피인 맞춤형 여름휴가 바이블
+            </span>
+            <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                <span class="text-oceanBlue bg-white px-3 py-1 rounded-md shadow-sm">싸피즈</span> 선정 2026<br>
+                <span class="inline-block mt-2">
+                    <span class="text-[#FFB7C5] text-glow font-extrabold">S/</span>
+                    <span class="text-[#0077B6] text-glow font-extrabold">S/</span>
+                    <span class="text-[#F7B267] text-glow font-extrabold">F/</span>
+                    <span class="text-[#9BE6FF] text-glow font-extrabold">W</span>
+                </span>
+                가장 기대되는<br>
+                <span class="text-[#FFB7C5] font-black">봄</span>/<span class="text-[#38BDF8] font-black">여름</span>/<span class="text-[#FB923C] font-black">가을</span>/<span class="text-[#7DD3FC] font-black">겨울</span> 휴가지 : 
+                <span class="text-sunYellow text-glow underline decoration-sunOrange">속초</span>
+            </h1>
+            <p class="text-sm md:text-base text-oceanLight max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+                서류➜코테➜인터뷰의 가혹한 예선 전형을 멋지게 통과한 우리 싸피 동기님들!<br class="hidden md:block">
+                아직 '진짜 지옥 코딩'의 맛은 보지 않으셨겠지만, 합격의 짜릿한 도파민은 아낌없이 누리셔야 마땅합니다! <br class="hidden md:block">
+                마침 <span class="text-sunYellow font-bold underline">7/17 제헌절 덕분에 생긴 금-토-일 3일 연휴</span>라는 골든 패치가 완벽히 Deploy 되었습니다.
+                <br><br>
+                <span class="font-mono text-sunYellow">O(1)</span> 수준으로 최적화를 마치고 엣지 케이스(Edge Case)까지 꼼꼼히 디버깅하여 예외 처리를 끝마친 속초 로컬 데이터셋을 대방출합니다!
+                <br><br>
+                속초의 푸른 동해와 대게 맛에 너무 도취되어 일요일 복귀에 실패해 월요일 아침 세레모니에 복귀하지 못한다면, 잔인하게 <span class="text-red-300 font-bold">'임의 결석' 익셉션(Exception)</span>이 발생하게 됩니다. 교수님이 자비롭게 인정해주시면 극적으로 '사유 결석'으로 롤백될 수도 있겠지만... 그에 따른 출석 감점 및 지원금 차감 수당 버그는 제가 절대 책임지지 않음을 미리 경고(Warning)합니다! 😂
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#curation" class="w-full sm:w-auto bg-sunYellow hover:bg-sunOrange text-navyDark font-extrabold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-compass text-lg"></i>
+                    속초 로컬 가이드 보러가기
+                </a>
+                <a href="#about" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                    이 데이터를 만든 사람은 누구? 🤔
+                </a>
+            </div>
+
+            <div class="mt-12 flex flex-wrap justify-center items-center gap-2 text-xs md:text-sm text-oceanLight/80">
+                <span class="border border-oceanLight/30 bg-white/5 px-3 py-1 rounded-full">#SSAFY_전용가이드</span>
+                <span class="border border-oceanLight/30 bg-white/5 px-3 py-1 rounded-full">#임의결석_위험감수</span>
+                <span class="border border-oceanLight/30 bg-white/5 px-3 py-1 rounded-full">#제헌절_3일연휴_특급솔루션</span>
+                <span class="border border-oceanLight/30 bg-white/5 px-3 py-1 rounded-full">#인생_디버깅_휴가지</span>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+                <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="#F8FAFC"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="curation" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold text-oceanBlue bg-oceanLight px-3 py-1.5 rounded-full uppercase tracking-wider mb-2 inline-block">
+                LOCAL ARCHIVE
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navyDark mb-4">
+                🌊 엄선된 속초 로컬 콘텐츠
+            </h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                광고판이 되어버린 광고성 SNS 정보에 지치셨나요? 싸피인들을 위해 직접 발로 뛰며 맛을 본 리얼 맛집, 인스타 감성 카페, 깨끗한 해수욕장, 완벽한 하루 코스, 테마별 숙소까지 정렬 완료했습니다!
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 border-b border-slate-200 pb-4">
+            <button onclick="switchTab('food')" class="tab-btn active px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 bg-oceanBlue text-white shadow-md">
+                <i class="fa-solid fa-utensils"></i> 맛집 (Top 9)
+            </button>
+            <button onclick="switchTab('cafe')" class="tab-btn px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-mug-saucer"></i> 카페 (Top 6)
+            </button>
+            <button onclick="switchTab('beach')" class="tab-btn px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-umbrella-beach"></i> 해수욕장 (Top 6)
+            </button>
+            <button onclick="switchTab('course')" class="tab-btn px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-route"></i> 추천 관광/코스
+            </button>
+            <button onclick="switchTab('stay')" class="tab-btn px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 text-slate-600 hover:bg-slate-100">
+                <i class="fa-solid fa-hotel"></i> 테마별 숙소
+            </button>
+        </div>
+
+        <div id="tab-food" class="tab-content active">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Jonggajip+Chicken" alt="종갓집통닭" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-red-500 text-white text-xs font-black px-2.5 py-1 rounded-lg">겉바속촉</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>종갓집통닭</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">얇고 극강으로 바삭한 튀김옷에 옛날 가마솥 전통 프라이드 맛을 고스란히 복원해 낸 현지 로컬 통닭 명가입니다.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 중앙시장 인근</span>
+                            <span class="text-oceanBlue">#옛날가마솥통닭 #치맥성지</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Yeongbin+Restaurant" alt="영빈반점" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">해장 강추</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>영빈반점</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">칼칼하면서도 묵직하고 끈끈한 고기 짬뽕 and 정통 탕수육으로, 전날 과음한 속초 주민들의 위장을 리셋해 주는 찐 중식당.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 교동 주택가 골목</span>
+                            <span class="text-oceanBlue">#고기짬뽕 #해장성지</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Kkotbunine+Store" alt="꽃분이네" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">전통 포차</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>꽃분이네</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.6</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">쫄깃쫄깃하고 고소하게 지져낸 모듬전과 기름지지 않은 안주류가 포근하고 소담스러운 막걸리 소울을 불러일으킵니다.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 아바이마을 초입 부근</span>
+                            <span class="text-oceanBlue">#모듬전맛집 #막걸리감성</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Jaetnori+Korean" alt="잿놀이" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">시골밥상</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>잿놀이</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">마음까지 맑아지는 한옥 정취 속에서 정갈한 토종 닭백숙과 무공해 산채 나물 반찬들이 줄지어 나오는 보양식 명소입니다.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 속초 외곽 학사평 한옥마을</span>
+                            <span class="text-oceanBlue">#한옥백숙 #힐링한정식</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Deunhae+Burger" alt="든해버거" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">인스타 핫플</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>든해버거</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">육즙을 가득 가둔 고기 패티와 자작하게 흘러내리는 든해 특제 소스가 조화를 이루어, 힙스터 감성이 물씬 묻어나는 수제 버거 전문점.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 속초 해안가 신흥 카페길</span>
+                            <span class="text-oceanBlue">#수제버거맛집 #육즙폭발</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Sujebi+House" alt="수제비집" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">손맛 가득</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>수제비집</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">주문이 밀려도 즉석에서 직접 얇고 정교하게 떼어내어 야들야들함이 살아있는 수제비 반죽과 깊게 달인 육수의 정겨운 조합.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 중앙시장 인근 먹거리골목</span>
+                            <span class="text-oceanBlue">#해장수제비 #야들야들반죽</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Gosikdang+Korean" alt="고식당" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">매콤달콤</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>고식당</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">지글지글 무쇠 불판 위에서 고화력으로 볶아내는 매콤칼칼한 낙지와 오삼불고기! 치즈 볶음밥 마무리는 국룰입니다.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 동명항 포차거리 건너편</span>
+                            <span class="text-oceanBlue">#오삼철판불고기 #볶음밥필수</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Chosimene+Pocha" alt="초심이네문어포차" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">야식 끝판왕</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>초심이네문어포차</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">동해 청정 해역에서 잡은 생참문어를 한입 크기로 슬라이스한 기가 막힌 문어숙회와, 문어 다리가 수북히 누워 있는 해물 라면 명가.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 등대해변 포차골목</span>
+                            <span class="text-oceanBlue">#싱싱참문어숙회 #문어칼칼라면</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Jeongto+Soup" alt="정토소머리국밥" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-oceanBlue text-white text-xs font-black px-2.5 py-1 rounded-lg">든든한국밥</span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2 flex justify-between items-center">
+                            <span>정토소머리국밥</span>
+                            <span class="text-sm text-amber-500 font-semibold"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">잡내가 전혀 느껴지지 않는 완벽하게 정제된 맑고 깊은 가마솥 사골 육수에 야들야들한 소머리 수육 고기를 빈틈없이 꽉 채워주는 로컬 국밥집.</p>
+                        <div class="border-t pt-4 flex justify-between items-center text-xs text-slate-500 font-medium">
+                            <span>📍 노학동 학사평로</span>
+                            <span class="text-oceanBlue">#전통소머리국밥 #해장끝판왕</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-cafe" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=Hieung+Coffee" alt="히응커피" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">히응커피</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">초록 가득한 플랜테리어와 수제 솔티드 크림라떼가 인상적인, 인스타그래머블한 속초 골목길 속 조용한 예술 카페.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 교동 주택가</span>
+                            <span class="text-oceanBlue">#힙스터골목 #크림라떼</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=Starbucks+Yeongrang" alt="스타벅스 영랑호리조트점" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">스타벅스 영랑호리조트점</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">영랑호 한가운데 우뚝 솟은 고층 타워형 지점에서 사방 360도로 영랑호와 설악산, 동해 바다를 조망할 수 있는 전망 사기 스팟.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 영랑호 리조트 타워 20F</span>
+                            <span class="text-oceanBlue">#파노라마뷰 #영랑호조망</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=Seorak+Bingsu" alt="설악빙수" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">설악빙수</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">속초의 한여름 무더위를 날려 버리는 사르르 녹아내리는 수제 눈꽃 우유얼음 위에 정성 가득한 로컬 통팥을 듬뿍 얹어주는 디저트 명가.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 청초호변 주변</span>
+                            <span class="text-oceanBlue">#설악눈꽃팥빙수 #우유실타래</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=The+Ambrosia" alt="더 엠브로시아" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">더 엠브로시아</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">소노펠리체 델피노에 입점하여, 거대한 통창 너머로 장엄한 울산바위가 손에 잡힐 듯 펼쳐지는 마운틴 뷰 끝판왕 카페.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 소노펠리체 델피노 EAST 10F</span>
+                            <span class="text-oceanBlue">#울산바위뷰 #인생샷치료제</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=Sea+Garden" alt="바다정원" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">바다정원</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">울창한 소나무 숲길과 드넓은 야외 모래사장 테라스가 바로 연결되어 파도 소리와 갓 구운 크루아상을 함께 만끽할 수 있는 복합 오션뷰 카페.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 속초 북부 장사동 해안</span>
+                            <span class="text-oceanBlue">#대형소나무정원 #빵지순례</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/ffd166/03045E?text=Studio+Toseongdang" alt="스튜디오 토성당" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">스튜디오 토성당</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">따뜻한 빈티지 아틀리에 분위기 속에서, 엄선된 원두로 느리게 드립한 정성 어린 커피를 한 잔 즐길 수 있는 작고 이색적인 감성 공간.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 청간정 인근 고요한 길목</span>
+                            <span class="text-oceanBlue">#핸드드립 #포토스튜디오카페</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-beach" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Sokcho+Beach" alt="속초 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">속초 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">접근성 끝판왕! 거대한 대관람차 '속초아이'와 푸른 동해바다 백사장이 조화를 이루는 속초 청춘 여행의 상징적인 중심지입니다.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 고속버스터미널 도보 5분</span>
+                            <span class="text-oceanBlue">#속초아이 #젊음의광장</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Cheonjin+Beach" alt="천진 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">천진 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">시가지 소음에서 한 발짝 물러난 투명한 바닷물과 이국적인 모래사장이 서핑 스쿨들과 어우러진 힙하고 활기찬 서핑 성지 해변.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 토성면 천진리</span>
+                            <span class="text-oceanBlue">#감성서핑 #맑고잔잔한물결</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Ayajin+Beach" alt="아야진 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">아야진 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">수심이 완만하고 넓은 바위 천연 웅덩이가 펼쳐져 있어, 스노클링을 하거나 무지개 해안도로를 걸으며 인생사진을 남기기 좋은 에메랄드빛 해변.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 토성면 아야진리</span>
+                            <span class="text-oceanBlue">#스노클링성지 #무지개해안도로</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Baekdo+Beach" alt="백도 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">백도 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">바람 소리와 잔잔한 물살 소리만 들리는 한적한 시골 어촌 감성이 고스란히 남아 있어, 가만히 앉아 '바다멍'을 때리기 완벽한 청정 힐링 스팟.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 죽왕면 문암진리</span>
+                            <span class="text-oceanBlue">#바다멍 #프라이빗비치</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Gajin+Beach" alt="가진 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">가진 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">푸르른 동해와 바다 경계를 이루는 조용하고 감각적인 인스타 감성의 카페 스팟들이 줄지어 있어 눈과 귀가 즐거운 에메랄드빛 바다.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 죽왕면 가진리</span>
+                            <span class="text-oceanBlue">#에메랄드바다 #인스타명소</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all transform hover:-translate-y-1 flex flex-col h-full border border-slate-100">
+                    <div class="relative h-48 bg-slate-200">
+                        <img src="https://placehold.co/600x400/0077b6/ffffff?text=Myeongpa+Beach" alt="명파 해수욕장" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-navyDark mb-2">명파 해수욕장</h3>
+                        <p class="text-slate-600 text-sm mb-4 flex-grow">대한민국 국토 최북단의 고요한 해안선! 때 묻지 않은 야생적인 고요함과 가슴 뭉클한 동해 끝자락의 신비로운 자연 정취를 고스란히 간직한 숨겨진 비밀 지대.</p>
+                        <div class="border-t pt-4 text-xs text-slate-500 font-medium flex justify-between">
+                            <span>📍 고성군 현내면 명파리</span>
+                            <span class="text-oceanBlue">#최북단해변 #청정자연의끝</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-course" class="tab-content">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-oceanLight text-oceanBlue font-extrabold text-xs px-3 py-1 rounded-full inline-block mb-3">포토 and 테디 콜라보</span>
+                        <h3 class="text-xl font-bold text-navyDark mb-3">얼라이브하트 + 테디베어팜</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            기발하고 유쾌한 트릭아트와 다이내믹 포토 스팟이 가득한 <strong class="text-oceanBlue">얼라이브하트</strong>를 먼저 방문해 상상초월 인생샷을 털고, 아기자기하고 귀여운 속초 테마의 곰돌이 인형들이 한가득 누워 있는 평화로운 <strong class="text-oceanBlue">테디베어팜</strong>을 연계해 감수성을 극대화하는 투어 코스!
+                        </p>
+                    </div>
+                    <div class="border-t pt-3 text-xs text-slate-400 font-medium">
+                        #인생샷지옥 #귀염뽀짝테디베어
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-sunYellow text-navyDark font-extrabold text-xs px-3 py-1 rounded-full inline-block mb-3">물놀이 3대 천왕</span>
+                        <h3 class="text-xl font-bold text-navyDark mb-3">속초 리조트 워터파크 삼총사</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            취향 따라 떠나는 물폭탄 힐링 솔루션! 
+                            <br>• <strong>롯데리조트 워터파크</strong> (압도적인 3면 오션뷰 전망)
+                            <br>• <strong>한화리조트 설악 워터피아</strong> (뜨끈한 온천수 스파 테라피)
+                            <br>• <strong>델피노 오션플레이</strong> (장엄한 울산바위를 정면으로 품은 대자연 수영)
+                        </p>
+                    </div>
+                    <div class="border-t pt-3 text-xs text-slate-400 font-medium">
+                        #파도풀정복 #온천수물놀이
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-emerald-100 text-emerald-800 font-extrabold text-xs px-3 py-1 rounded-full inline-block mb-3">둘레길 자연 쉼터</span>
+                        <h3 class="text-xl font-bold text-navyDark mb-3">송지호 호수공원</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            울창한 소나무 숲길과 투명하리만치 고요한 호수가 맞물린 비밀스러운 생태공원. 송지호 철새관망타워에 올라가 탁 트인 바다와 백도 해변까지 펼쳐진 광활한 풍경을 한눈에 보며 피톤치드를 온몸으로 호흡하는 조용한 산책 코스.
+                        </p>
+                    </div>
+                    <div class="border-t pt-3 text-xs text-slate-400 font-medium">
+                        #철새관망타워 #고요한산책로
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-stay" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-3xl mb-4">🏢</div>
+                        <h3 class="text-lg font-bold text-navyDark mb-2">럭셔리 호캉스 : 카시아 속초</h3>
+                        <p class="text-slate-600 text-xs md:text-sm mb-4">
+                            글로벌 프리미엄 럭셔리 브랜드 '반얀트리 그룹'에서 야심 차게 론칭한 대형 리조트! 전 객실 파노라마 오션뷰와 고급 프라이빗 욕조가 설계되어 있으며, 환상적인 루프탑 바에서 쏟아지는 동해 밤바다 별빛을 영접하기 최적화된 호캉스 종착지.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-oceanDark bg-oceanLight px-2.5 py-1 rounded-full self-start">반얀트리 감성 / 인피니티 풀</span>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-3xl mb-4">🏡</div>
+                        <h3 class="text-lg font-bold text-navyDark mb-2">오션뷰 감성 펜션 : 봉포 펜션구역</h3>
+                        <p class="text-slate-600 text-xs md:text-sm mb-4">
+                            문을 여는 순간 철썩이는 파도 소리가 침대 바로 밑까지 닿는 착각을 불러일으키는 감각적인 오션뷰 펜션들이 밀집한 구역! 아침에 굳이 밖으로 나가지 않고 이불 속에서 시그니처 동해 일출 장관을 편안하게 누리는 완벽한 낭만 루트.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-oceanDark bg-oceanLight px-2.5 py-1 rounded-full self-start">봉포해안가 라인 / 바다 밀착 스파</span>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-3xl mb-4">🛌</div>
+                        <h3 class="text-lg font-bold text-navyDark mb-2">실속 가성비 : 청초호 주변 숙소군</h3>
+                        <p class="text-slate-600 text-xs md:text-sm mb-4">
+                            우리 성실한 싸피인들의 교육 지원금을 아름답고 경제적으로 세이브해줄 가성비 끝판왕 신축 비즈니스 호텔과 게스트하우스가 즐비한 요충지! 중앙시장, 이마트, 터미널까지 도보로 격파 가능한 그야말로 뚜벅이 최강의 지리적 요건을 자랑합니다.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-oceanDark bg-oceanLight px-2.5 py-1 rounded-full self-start">합리적인 동선 깡패 / 가성비 깔끔</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3: Profile Section (전환) -->
+<section id="about" class="bg-slate-100 py-16 md:py-24 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 flex flex-col md:flex-row items-center gap-8 relative z-10">
+            <!-- Avatar -->
+            <div class="w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden relative shadow-md flex-shrink-0 bg-gradient-to-tr from-oceanBlue to-sunYellow p-1">
+                <div class="w-full h-full bg-slate-900 rounded-xl overflow-hidden relative flex items-center justify-center">
+                    <span class="text-6xl md:text-7xl">👨‍💻</span>
+                    <div class="absolute bottom-2.5 left-2.5 bg-sunYellow text-navyDark text-[10px] font-black px-2.5 py-1 rounded-full">
+                        로컬 큐레이터
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="flex-grow text-center md:text-left">
+                <span class="text-[11px] font-bold text-oceanBlue bg-oceanLight px-3 py-1.5 rounded-full uppercase tracking-wider mb-2.5 inline-block">
+                    Meet the Curator
+                </span>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-navyDark mb-3">
+                    안녕하세요, <span class="text-oceanBlue">조석래</span>입니다!
+                </h3>
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
+                    "수많은 명소 중 왜 하필 속초냐고요?"<br>
+                    속초쪽은 내비게이션을 아예 끄고도 골목 구석구석을 찾아다닐 수 있는 <strong>前 속초 현지인</strong>인 제가 직접 꼼꼼하게 검증해낸 최적화 완료 로컬 데이터베이스를 보유하고 있기 때문입니다. 단순 블로그 광고 필터링을 넘어선 인생 명소 가이드를 공개합니다!
+                </p>
+
+                <!-- Interactive Profile Info Container -->
+                <div id="profileGridContainer" class="relative min-h-[140px] max-w-lg mx-auto md:mx-0">
+                    
+                    <!-- Profile Grid Matrix -->
+                    <div id="profileUnlockedGrid" class="grid grid-cols-2 gap-3">
+                        <!-- [🎂 나이] 초기 대기 없이 무조건 상시 오픈 상태 -->
+                        <div id="item-age" class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-left">
+                            <span class="text-slate-400 text-[10px] block font-semibold">🎂 나이</span>
+                            <span class="font-bold text-navyDark text-sm">2000년생 만26세</span>
+                        </div>
+
+                        <!-- [📍 출생 지역] 기본 잠김 (안 보임) -->
+                        <div id="item-birth" class="hidden bg-slate-50 p-3 rounded-xl border border-slate-200 text-left transition-all duration-300">
+                            <span class="text-slate-400 text-[10px] block font-semibold">📍 출생 지역</span>
+                            <span class="font-bold text-navyDark text-sm">서울 구로구</span>
+                        </div>
+
+                        <!-- [🚚 이사 횟수] 기본 잠김 (안 보임) -->
+                        <div id="item-move" class="hidden bg-slate-50 p-3 rounded-xl border border-slate-200 text-left transition-all duration-300">
+                            <span class="text-slate-400 text-[10px] block font-semibold">🚚 이사 횟수</span>
+                            <span class="font-bold text-navyDark text-sm">2회</span>
+                        </div>
+
+                        <!-- [🏖️ 속초여행 횟수] 기본 잠김 (안 보임) -->
+                        <div id="item-travel" class="hidden bg-slate-50 p-3 rounded-xl border border-slate-200 text-left transition-all duration-300">
+                            <span class="text-slate-400 text-[10px] block font-semibold">🏖️ 속초여행 횟수</span>
+                            <span class="font-bold text-navyDark text-sm">0회</span>
+                        </div>
+
+                        <!-- [🎖️ 군대 경력] 기본 잠김 (안 보임) -> 2개 슬롯 차지 구조 유지 -->
+                        <div id="item-career" class="hidden col-span-2 bg-gradient-to-r from-emerald-600 to-teal-500 p-3 rounded-xl text-left text-white shadow-md flex flex-col justify-between transition-all duration-300">
+                            <span class="text-white/80 text-[9px] block font-bold">🎖️ 군대 경력</span>
+                            <span class="font-black text-xs flex items-center gap-1 mt-0.5 leading-tight">
+                                <i class="fa-solid fa-unlock text-sunYellow animate-pulse"></i> 2024년 3월 1일 임관 ~ 2026년 6월 30일 전역 / 22사단 장교
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="quiz" class="py-16 md:py-24 bg-navyDark text-white relative overflow-hidden">
+        <div class="absolute w-72 h-72 bg-oceanBlue/20 rounded-full top-10 right-10 blur-3xl pointer-events-none"></div>
+        <div class="absolute w-80 h-80 bg-sunYellow/10 rounded-full bottom-10 left-10 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-sunYellow text-navyDark text-xs font-bold px-3 py-1.5 rounded-full mb-3 uppercase tracking-wider">
+                    ⚡ SECRET SILENT QUIZ
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                    "내가 왜 속초를 가장 잘 알고 있을까?" 🤔
+                </h2>
+                <p class="text-oceanLight/80 text-sm md:text-base mt-3 max-w-xl mx-auto leading-relaxed">
+                    사전 정보 없이 직관의 눈으로 찍어서 맞히는 일품 퀴즈 인터랙션!<br>
+                    정답을 맞힌 싸피 동기분들께는 <strong>특급 커피 리워드</strong>가 이어집니다!
+                </p>
+            </div>
+
+            <div class="bg-slate-900/60 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-white/10 shadow-2xl">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5 mb-6 text-center md:text-left">
+                    <span class="text-sunYellow font-extrabold text-sm md:text-base block mb-1">
+                        Q. 큐레이터 '조석래'가 속초의 오지 골목 맛집까지 완벽하게 정복하게 이유는?
+                    </span>
+                    <span class="text-xs text-white/50">(※ 한 번의 꼼꼼한 눈썰미로 정답을 가려내 보세요!)</span>
+                </div>
+
+                <div class="space-y-3" id="quizOptions">
+                    <label class="flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 cursor-pointer transition-all">
+                        <input type="radio" name="quiz_choice" value="1" class="w-5 h-5 accent-sunYellow mr-4">
+                        <span class="text-sm md:text-base font-semibold">1번. 고향이자 출신지가 바로 강원도 속초다</span>
+                    </label>
+                    <label class="flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 cursor-pointer transition-all">
+                        <input type="radio" name="quiz_choice" value="2" class="w-5 h-5 accent-sunYellow mr-4">
+                        <span class="text-sm md:text-base font-semibold">2번. 초/중/고 정규과정을 강원도 어딘가에서 수료했다</span>
+                    </label>
+                    <label class="flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 cursor-pointer transition-all">
+                        <input type="radio" name="quiz_choice" value="3" class="w-5 h-5 accent-sunYellow mr-4">
+                        <span class="text-sm md:text-base font-semibold">3번. 대학교(학부)를 강원도 강릉 방면에서 졸업했다</span>
+                    </label>
+                    <label class="flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 cursor-pointer transition-all">
+                        <input type="radio" name="quiz_choice" value="4" class="w-5 h-5 accent-sunYellow mr-4">
+                        <span class="text-sm md:text-base font-semibold">4번. 군 생활을 22사단에서 보내 외출/외박때마다 속초로 다녀왔다</span>
+                    </label>
+                    <label class="flex items-center p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 cursor-pointer transition-all">
+                        <input type="radio" name="quiz_choice" value="5" class="w-5 h-5 accent-sunYellow mr-4">
+                        <span class="text-sm md:text-base font-semibold">5번. 속초/양양/강릉 여행만 10번 넘게 다녀왔다</span>
+                    </label>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="submitQuiz()" class="w-full bg-sunYellow hover:bg-sunOrange text-navyDark font-extrabold text-base md:text-lg py-4 rounded-2xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-sunYellow/10">
+                        비밀 정답 확인하고 리워드 받기 🚀
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="resultModal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full border border-slate-100 relative animate-fadeIn text-slate-800 shadow-2xl">
+            <button onclick="closeResultModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div class="text-center">
+                <div id="modalIcon" class="text-6xl mb-4">🎉</div>
+                <h3 id="modalTitle" class="text-2xl font-black text-navyDark mb-3">완벽한 정답입니다!</h3>
+                <p id="modalText" class="text-slate-600 text-sm leading-relaxed mb-6">
+                    축하합니다! 맞습니다. 저는 <strong>속초 인근 최전방 22사단(율곡부대)에서 장교</strong>로 군 생활 하였으며, 2026년 6월 30일에 전역하여 갓 사회로 복귀했습니다.
+                </p>
+
+                <div id="modalProfileCard" class="bg-slate-50 rounded-2xl p-4 border border-slate-100 text-left mb-6">
+                    <h4 class="font-extrabold text-navyDark text-xs mb-2 flex items-center gap-1">
+                        <i class="fa-solid fa-address-card text-oceanBlue"></i> 큐레이터 조석래 최종 프로필
+                    </h4>
+                    <ul class="text-xs text-slate-600 space-y-1.5">
+                        <li><strong>📍 고향 / 태생 :</strong> 서울 구로구</li>
+                        <li><strong>🛡️ 군 장교 경력 :</strong> 육군 22사단(율곡부대) 장교 복무</li>
+                        <li><strong>🏫 현 소속 :</strong> SSAFY 교육생</li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <a id="modalActionBtn" href="#networking" onclick="closeResultModal()" class="w-full bg-oceanBlue hover:bg-oceanDark text-white font-extrabold py-3.5 rounded-xl transition-all shadow-md">
+                        커피 리워드 신청하러 가기 ☕
+                    </a>
+                    <button onclick="closeResultModal()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold py-3.5 rounded-xl transition-colors">
+                        조금 더 둘러보기
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="networking" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <span class="text-xs font-bold text-oceanBlue bg-oceanLight px-3 py-1.5 rounded-full mb-3 inline-block">
+                SSAFY PARTNERSHIP
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navyDark mb-4">
+                "싸피에서 함께 맛있는 프로젝트를 만들어봐요!"
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto mb-10 leading-relaxed">
+                속초의 골목을 꼼꼼하게 보물찾기하듯 탐색해 가이드북을 만든 기획력과 디테일! 이 센스를 고스란히 담아 싸피 공통/특화 프로젝트에서 차원이 다른 결과를 창출하겠습니다. 믿을 수 있는 열정 파트너 석래와 네트워킹을 시작해 보세요!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
+                <a href="https://github.com" target="_blank" class="flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-800 font-bold p-4 rounded-2xl border border-slate-200 shadow-sm transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-github text-2xl text-slate-900"></i>
+                    <div class="text-left">
+                        <span class="text-[9px] text-slate-400 block font-normal">GitHub</span>
+                        <span class="text-sm">저장소 방문하기</span>
+                    </div>
+                </a>
+                <a href="https://notion.so" target="_blank" class="flex items-center justify-center gap-3 bg-white hover:bg-slate-100 text-slate-800 font-bold p-4 rounded-2xl border border-slate-200 shadow-sm transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-file-invoice text-2xl text-emerald-500"></i>
+                    <div class="text-left">
+                        <span class="text-[9px] text-slate-400 block font-normal">Interactive</span>
+                        <span class="text-sm">노션 포트폴리오</span>
+                    </div>
+                </a>
+                <button onclick="copyEmailContact()" class="flex items-center justify-center gap-3 bg-sunYellow hover:bg-sunOrange text-navyDark font-bold p-4 rounded-2xl border border-sunYellow/30 shadow-sm transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-paper-plane text-2xl"></i>
+                    <div class="text-left">
+                        <span class="text-[9px] text-navyDark/60 block font-normal">Quick Contact</span>
+                        <span class="text-sm">이메일 주소 복사</span>
+                    </div>
+                </button>
+            </div>
+
+            <div id="toastNotification" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs md:text-sm px-6 py-3.5 rounded-full shadow-2xl flex items-center gap-2 opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+                <i class="fa-solid fa-circle-check text-green-400"></i> <span id="toastMsg">연락처가 복사되었습니다!</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navyDark text-white/50 py-8 text-center text-xs">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© 2026 Seokrae. Specially Curated for SSAFY Fellowship. All Rights Reserved.</p>
+            <p class="flex items-center gap-1 font-medium">
+                Designed with ♥ for Sokcho Curation and Team Building.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Tab system switcher
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            contents.forEach(content => { content.classList.remove('active'); });
+            buttons.forEach(btn => {
+                btn.className = "tab-btn px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 text-slate-600 hover:bg-slate-100";
+            });
+
+            const targetPanel = document.getElementById(`tab-${tabId}`);
+            if (targetPanel) { targetPanel.classList.add('active'); }
+            event.currentTarget.className = "tab-btn active px-4 py-3 rounded-xl font-bold text-xs md:text-sm transition-all flex items-center gap-1.5 bg-oceanBlue text-white shadow-md";
+        }
+
+        // Quiz Engine
+        function submitQuiz() {
+        const checkedOption = document.querySelector('input[name="quiz_choice"]:checked');
+        
+        if (!checkedOption) {
+            triggerToast("⚠️ 퀴즈 선택지 중에서 답을 한 가지 선택해 주세요!");
+            return;
+        }
+
+        const chosenValue = checkedOption.value;
+        const modal = document.getElementById('resultModal');
+        const icon = document.getElementById('modalIcon');
+        const title = document.getElementById('modalTitle');
+        const text = document.getElementById('modalText');
+        const modalProfile = document.getElementById('modalProfileCard');
+        const modalActionBtn = document.getElementById('modalActionBtn');
+
+        // 모달 기본 성공 스타일 세팅
+        title.className = "text-2xl font-black text-emerald-600 mb-3";
+        modalProfile.classList.remove('hidden');
+        modalActionBtn.innerText = "커피 리워드 신청하러 가기 ☕";
+        modalActionBtn.className = "w-full bg-oceanBlue hover:bg-oceanDark text-white font-extrabold py-3.5 rounded-xl transition-all shadow-md text-center block";
+
+        if (chosenValue === "4") {
+            // 정답 분기: 모든 정보 완벽 전면 해제
+            icon.innerText = "🎉";
+            title.innerText = "놀라운 눈썰미! 완벽한 정답입니다!";
+            text.innerHTML = "정답입니다! 조석래님은 속초를 수호하는 최전방 <strong>육군 22사단(율곡부대)에서 장교(소위/중위)로 복무</strong>했습니다. 위수지역 제한 덕분에 외출과 외박 시 필수 관문이었던 속초 구석구석을 순찰하듯 집요하게 탐색해 낸 초특급 로컬 가이드 맵입니다!<br><br><span class='text-navyDark font-extrabold bg-sunYellow/30 px-2 py-1 rounded block mt-2 text-center'>🎁 오프라인에서 석래님에게 정답('22사단 장교 군생활')을 살짝 인증하시면 시원한 아메리카노 기프티콘 혜택을 전격 보장합니다!</span>";
+            
+            unlockAllProfileGrid();
+        } else {
+            // 오답 분기: 프로필 요약 카드 비활성화 및 선택 힌트 매핑 오픈
+            icon.innerText = "😅";
+            title.innerText = "아쉽습니다! 함정에 퐁당 빠지셨네요!";
+            title.className = "text-2xl font-black text-rose-500 mb-3";
+            modalProfile.classList.add('hidden'); 
+            
+            modalActionBtn.innerText = "다시 퀴즈 도전하기 🔄";
+            modalActionBtn.className = "w-full bg-rose-500 hover:bg-rose-600 text-white font-extrabold py-3.5 rounded-xl transition-all shadow-md text-center block";
+
+            if (chosenValue === "1") {
+                text.innerHTML = "아쉽게도 틀렸습니다! <strong>[단서 획득]</strong> 제 고향은 <strong>서울 구로구</strong>입니다! 속초 태생은 아니지만 은밀한 보물창고들을 한가득 발굴해 내게 된 숨은 계기가 따로 있습니다.<br><br><span class='text-slate-500 text-xs block text-center bg-slate-100 py-2 rounded font-semibold'>💡 프로필 패널에서 [📍 출생 지역] 정보가 오픈되었습니다!</span>";
+                unlockSpecificItem("item-birth");
+            } else if (chosenValue === "2" || chosenValue === "3") {
+                text.innerHTML = "아쉽게도 틀렸습니다! <strong>[단서 획득]</strong> 저는 초/중/고/대학교 모두 서울에서 다녔으며 살면서 <strong>이사는 딱 2번</strong>밖에 하지 않았습니다! 연고지가 없음에도 구석구석 정복한 비결을 유추해 보세요.<br><br><span class='text-slate-500 text-xs block text-center bg-slate-100 py-2 rounded font-semibold'>💡 프로필 패널에서 [🚚 이사 횟수] 정보가 오픈되었습니다!</span>";
+                unlockSpecificItem("item-move");
+            } else {
+                text.innerHTML = "아쉽게도 틀렸습니다! <strong>[단서 획득]</strong> 놀랍게도 저는 여행 목적으로는 <strong>속초를 단 0회 방문</strong>했습니다! 단순 관광객의 시선을 뛰어넘는 정착 연계의 실마리를 찾아보세요.<br><br><span class='text-slate-500 text-xs block text-center bg-slate-100 py-2 rounded font-semibold'>💡 프로필 패널에서 [🏖️ 속초여행 횟수] 정보가 오픈되었습니다!</span>";
+                unlockSpecificItem("item-travel");
+            }
+        }
+
+        modal.classList.remove('hidden');
+    }
+
+    // 오답용: 특정 한 개 항목만 display 요소를 hidden 해제하여 강조 표시하는 함수
+    function unlockSpecificItem(itemId) {
+        const targetItem = document.getElementById(itemId);
+        if (targetItem) {
+            targetItem.classList.remove('hidden');
+            targetItem.classList.add('block', 'ring-2', 'ring-oceanBlue', 'scale-[1.02]', 'animate-fadeIn');
+        }
+    }
+
+    // 정답용: 전체 프로필 매트릭스를 완전히 오픈하는 함수
+    function unlockAllProfileGrid() {
+        const items = ['item-birth', 'item-move', 'item-travel', 'item-career'];
+        items.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.remove('hidden', 'ring-2', 'ring-oceanBlue', 'scale-[1.02]');
+                if (id === 'item-career') {
+                    el.classList.add('flex');
+                } else {
+                    el.classList.add('block');
+                }
+            }
+        });
+        triggerToast("🔓 전체 잠금 해제 완료! 모든 프로필 데이터셋이 복구되었습니다.");
+    }
+
+        function closeResultModal() {
+            document.getElementById('resultModal').classList.add('hidden');
+        }
+
+        function scrollToQuiz() {
+            const element = document.getElementById('quiz');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function copyEmailContact() {
+            const emailAddress = "seokrae@ssafy.net";
+            const textContainer = document.createElement('textarea');
+            textContainer.value = emailAddress;
+            document.body.appendChild(textContainer);
+            textContainer.select();
+            document.execCommand('copy');
+            document.body.removeChild(textContainer);
+
+            triggerToast("📋 연락처(이메일: seokrae@ssafy.net)가 클립보드에 복사되었습니다!");
+        }
+
+        function triggerToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const toastMsg = document.getElementById('toastMsg');
+            
+            toastMsg.innerText = message;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+            }, 3500);
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 40) {
+                header.classList.add('shadow-md', 'bg-white/95');
+                header.classList.remove('bg-white/80');
+            } else {
+                header.classList.remove('shadow-md', 'bg-white/95');
+                header.classList.add('bg-white/80');
+            }
+        });
+    </script>
+</body>
+</html>
