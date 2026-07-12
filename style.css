@@ -1,0 +1,48 @@
+/* --- style.css --- */
+body {
+    background-color: #F8FAFC;
+}
+.wave-bg {
+    background: linear-gradient(180deg, #0077B6 0%, #03045E 100%);
+}
+.text-glow {
+    text-shadow: 0 0 15px rgba(255, 209, 102, 0.7); 
+}
+/* 모바일 가로 탭 바 스크롤용 숨김 처리 */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* 일반 스크롤바 커스텀 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+    background: #0077B6;
+    border-radius: 4px;
+}
+/* 탭 및 모달 애니메이션 */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.lock-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}

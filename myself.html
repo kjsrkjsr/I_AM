@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I AM | 싸피즈 선정 2026 최고의 여행지</title>
+    
+    <!-- 외부 라이브러리 CDN 로드 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind 맞춤형 테마 설정 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oceanBlue: '#0077B6',
+                        oceanDark: '#005F92',
+                        oceanLight: '#E0F2FE',
+                        sunYellow: '#FFD166',
+                        sunOrange: '#F7B267',
+                        navyDark: '#03045E',
+                    },
+                    fontFamily: {
+                        sans: ['SamsungOne', 'One UI Sans', 'Pretendard', '-apple-system', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 외부에 남겨두는 마스터 스타일시트 파일 연결 -->
+    <link rel="stylesheet" href="style.css">     
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden pt-16 md:pt-20 flex flex-col min-h-screen">
+
+    <!-- ======================================================================
+         [공통 헤더 영역] 오작동 없는 인라인 햄버거 토글 스위치 적용
+         ====================================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100" id="mainHeader">
+        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+            <a href="home.html" class="flex items-center space-x-2">
+                <span class="text-xl md:text-2xl font-black text-oceanBlue tracking-tighter">I AM <span class="text-xl md:text-1xl font-black text-oceanBlue tracking-tighter">in ssafy
+            </a>
+            
+            <!-- 데스크톱 네비게이션 -->
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="home.html" class="nav-link hover:text-oceanBlue py-1 transition-colors">홈</a>
+                <a href="introduce.html" class="nav-link hover:text-oceanBlue py-1 transition-colors">속초 소개</a>
+                <a href="myself.html" class="nav-link text-oceanBlue py-1 border-b-2 border-oceanBlue font-bold">내 소개 (퀴즈)</a>
+            </nav>
+            
+            <div class="flex items-center gap-3">
+                <a href="myself.html" class="hidden md:inline-block bg-oceanBlue hover:bg-oceanDark text-white text-xs font-bold px-4 py-2 rounded-full transition-all shadow-md">
+                    퀴즈 풀고 선물 받기 🎁
+                </a>
+                <!-- 완벽 구동되는 인라인 클릭 제어 장치 -->
+                <button id="menuToggle" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden text-slate-600 hover:text-oceanBlue p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 모바일 드롭다운 메뉴 레이어 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg absolute w-full left-0 top-full z-50">
+            <nav class="flex flex-col px-4 py-3 space-y-3 text-sm font-semibold text-slate-600">
+                <a href="home.html" class="hover:text-oceanBlue block py-1 transition-colors">홈</a>
+                <a href="introduce.html" class="hover:text-oceanBlue block py-1 transition-colors">속초 소개</a>
+                <a href="myself.html" class="text-oceanBlue block py-1 font-bold">내 소개 (퀴즈)</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================================================================
+         [내 소개 및 퀴즈 본문 영역] 모바일 카드 비율 패치 완료
+         ====================================================================== -->
+    <main class="flex-grow">
+        <div id="page-myself" class="page-view">
+            
+            <!-- 1. 프로필 아바타 & 매트릭스 그리드 섹션 -->
+            <section class="bg-slate-100 py-10 md:py-24 relative overflow-hidden">
+                <div class="max-w-4xl mx-auto px-4 w-full">
+                    <div class="bg-white rounded-2xl p-5 md:p-12 shadow-sm border border-slate-200 flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                        <!-- 아바타 박스 모바일 중앙 정렬 고정 -->
+                        <div class="w-32 h-32 md:w-56 md:h-56 rounded-2xl overflow-hidden relative shadow-inner flex-shrink-0 bg-gradient-to-tr from-oceanBlue to-sunYellow p-1 mx-auto md:mx-0">
+                            <div class="w-full h-full bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center relative">
+                                <span class="text-5xl md:text-7xl">👨‍💻</span>
+                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-sunYellow text-navyDark text-[9px] font-black px-2 py-0.5 rounded-full whitespace-nowrap">로컬 큐레이터</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 바이오 그래피 텍스트 밸런싱 -->
+                        <div class="flex-grow text-center md:text-left w-full">
+                            <span class="text-[9px] md:text-[11px] font-bold text-oceanBlue bg-oceanLight px-2.5 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">Meet the Curator</span>
+                            <h3 class="text-xl md:text-3xl font-black text-navyDark mb-2">안녕하세요, <span class="text-oceanBlue">조석래</span>입니다!</h3>
+                            <p class="text-slate-600 text-xs md:text-sm leading-relaxed mb-5 px-1 md:px-0">
+                                내비게이션 없이도 골목을 찾아다닐 수 있는 <strong>前 속초 현지인</strong>의 가이드입니다. 아래 퀴즈를 풀고 숨겨진 비밀 프로필 데이터셋을 전면 오픈해 보세요!
+                            </p>
+                            
+                            <!-- 모바일에서 줄바꿈 및 간격 최적화 완료된 매트릭스 -->
+                            <div id="profileUnlockedGrid" class="grid grid-cols-2 gap-2 max-w-md mx-auto md:mx-0 text-left">
+                                <div id="item-age" class="bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                                    <span class="text-slate-400 text-[8px] md:text-[10px] block font-bold mb-0.5">🎂 나이</span>
+                                    <span class="font-bold text-navyDark text-xs md:text-sm">2000년생 만26세</span>
+                                </div>
+                                <div id="item-birth" class="hidden bg-slate-50 p-2.5 rounded-xl border border-slate-200 transition-all duration-300">
+                                    <span class="text-slate-400 text-[8px] md:text-[10px] block font-bold mb-0.5">📍 출생</span>
+                                    <span class="font-bold text-navyDark text-xs md:text-sm">서울 구로구</span>
+                                </div>
+                                <div id="item-move" class="hidden bg-slate-50 p-2.5 rounded-xl border border-slate-200 transition-all duration-300">
+                                    <span class="text-slate-400 text-[8px] md:text-[10px] block font-bold mb-0.5">🚚 이사</span>
+                                    <span class="font-bold text-navyDark text-xs md:text-sm">2회</span>
+                                </div>
+                                <div id="item-travel" class="hidden bg-slate-50 p-2.5 rounded-xl border border-slate-200 transition-all duration-300">
+                                    <span class="text-slate-400 text-[8px] md:text-[10px] block font-bold mb-0.5">🏖️ 여행 횟수</span>
+                                    <span class="font-bold text-navyDark text-xs md:text-sm">0회</span>
+                                </div>
+                                <div id="item-career" class="hidden col-span-2 bg-gradient-to-r from-emerald-600 to-teal-500 p-2.5 rounded-xl text-left text-white shadow-md flex-col justify-between transition-all duration-300">
+                                    <span class="text-white/80 text-[8px] md:text-[10px] block font-bold">🎖️ 군대 경력</span>
+                                    <span class="font-black text-[11px] md:text-sm flex items-center gap-1 mt-0.5"><i class="fa-solid fa-unlock text-sunYellow"></i> 24.03 ~ 26.06 / 22사단 장교 전역 완료</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 시크릿 퀴즈 패널 인터랙션 섹션 -->
+            <section class="py-12 md:py-24 bg-navyDark text-white relative overflow-hidden">
+                <div class="max-w-xl mx-auto px-4 relative z-10 w-full">
+                    <div class="text-center mb-6">
+                        <span class="inline-block bg-sunYellow text-navyDark text-[9px] md:text-xs font-bold px-3 py-1 rounded-full mb-2 uppercase tracking-wider">⚡ SECRET SILENT QUIZ</span>
+                        <h2 class="text-xl md:text-3xl font-black text-white tracking-tight">"내가 왜 속초를 가장 잘 알까?" 🤔</h2>
+                    </div>
+                    
+                    <div class="bg-slate-900/80 rounded-2xl p-4 md:p-8 border border-white/5 shadow-xl">
+                        <div class="bg-white/5 p-3.5 rounded-xl border border-white/5 mb-4 text-center md:text-left">
+                            <span class="text-sunYellow font-bold text-xs md:text-base block leading-relaxed">Q. 큐레이터 '조석래'가 속초의 오지 골목 맛집까지 완벽하게 정복하게 된 비결은?</span>
+                        </div>
+                        
+                        <!-- 모바일에서 여유롭게 엄지 터치가 가능한 Touch Target 확보 -->
+                        <div class="space-y-2.5 text-xs md:text-sm" id="quizOptions">
+                            <label class="flex items-center p-3.5 rounded-xl bg-white/5 border border-white/5 cursor-pointer active:bg-white/10 transition-colors">
+                                <input type="radio" name="quiz_choice" value="1" class="w-4 h-4 accent-sunYellow mr-3 shrink-0"><span>1번. 고향이자 출신지가 바로 속초다</span>
+                            </label>
+                            <label class="flex items-center p-3.5 rounded-xl bg-white/5 border border-white/5 cursor-pointer active:bg-white/10 transition-colors">
+                                <input type="radio" name="quiz_choice" value="2" class="w-4 h-4 accent-sunYellow mr-3 shrink-0"><span>2번. 정규과정을 강원도에서 수료했다</span>
+                            </label>
+                            <label class="flex items-center p-3.5 rounded-xl bg-white/5 border border-white/5 cursor-pointer active:bg-white/10 transition-colors">
+                                <input type="radio" name="quiz_choice" value="4" class="w-4 h-4 accent-sunYellow mr-3 shrink-0"><span>4번. 군 생활을 22사단 장교로 복무하여 외출마다 다녀왔다</span>
+                            </label>
+                            <label class="flex items-center p-3.5 rounded-xl bg-white/5 border border-white/5 cursor-pointer active:bg-white/10 transition-colors">
+                                <input type="radio" name="quiz_choice" value="5" class="w-4 h-4 accent-sunYellow mr-3 shrink-0"><span>5번. 개인적인 여행만 10번 넘게 다녀왔다</span>
+                            </label>
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button onclick="submitQuiz()" class="w-full bg-sunYellow hover:bg-sunOrange text-navyDark font-black py-3 rounded-xl shadow-md text-xs md:text-base transition-all">비밀 정답 확인하고 리워드 받기 🚀</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ======================================================================
+         [공통 푸터 영역] 모바일 연동 최적화 패키징
+         ====================================================================== -->
+    <footer class="bg-navyDark text-white pt-10 pb-6 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <span class="text-[10px] font-bold text-oceanLight bg-oceanBlue px-2.5 py-1 rounded-full mb-3 inline-block">SSAFY PARTNERSHIP</span>
+            <h4 class="text-base md:text-lg font-bold mb-2">함께 멋진 프로젝트를 만들어봐요!</h4>
+            <p class="text-xs text-slate-400 mb-5 max-w-md mx-auto leading-relaxed">속초 골목을 탐색한 기획력과 디테일로 싸피 프로젝트에서 차원이 다른 결과를 창출하겠습니다. 열정 파트너 석래와 네트워킹을 시작해 보세요.</p>
+            
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <a href="https://github.com" target="_blank" class="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors text-sm"><i class="fa-brands fa-github"></i></a>
+                <a href="https://notion.so" target="_blank" class="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors text-sm"><i class="fa-solid fa-file-invoice"></i></a>
+                <button onclick="copyEmailContact()" class="bg-sunYellow text-navyDark hover:bg-sunOrange px-3.5 py-1.5 rounded-full font-bold transition-colors flex items-center gap-1.5 text-xs"><i class="fa-solid fa-paper-plane"></i> 이메일 복사</button>
+            </div>
+            
+            <p class="text-[10px] text-white/30 border-t border-slate-800/60 pt-4">© 2026 Seokrae. Specially Curated for SSAFY Fellowship.</p>
+        </div>
+    </footer>
+
+    <!-- 알림 인터랙션용 글로벌 팝업 모달 레이어 -->
+    <div id="resultModal" class="fixed inset-0 bg-black/75 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl p-5 max-w-sm w-full relative text-slate-800 shadow-2xl text-center">
+            <button onclick="closeResultModal()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div id="modalIcon" class="text-4xl mb-2">🎉</div>
+            <h3 id="modalTitle" class="text-base font-black text-navyDark mb-1.5">결과</h3>
+            <p id="modalText" class="text-slate-600 text-xs leading-relaxed mb-4">내용</p>
+            <div id="modalProfileCard" class="bg-slate-50 rounded-xl p-3 border border-slate-100 text-left mb-4 hidden">
+                <h4 class="font-extrabold text-navyDark text-[11px] mb-1.5">🎖️ 최종 프로필 요약 데이터</h4>
+                <ul class="text-[11px] text-slate-500 space-y-1">
+                    <li><strong>📍 출생 태생:</strong> 서울 구로구</li>
+                    <li><strong>🛡️ 복무 경력:</strong> 육군 22사단 장교 만기전역</li>
+                </ul>
+            </div>
+            <button onclick="closeResultModal()" class="w-full bg-oceanBlue hover:bg-oceanDark text-white font-bold py-2.5 rounded-xl transition-all text-xs">확인</button>
+        </div>
+    </div>
+
+    <!-- 범용 하단 토스트 팝업 알림바 -->
+    <div id="toastNotification" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 w-[85%] sm:w-auto text-center bg-slate-900/95 backdrop-blur-sm text-white text-xs px-5 py-3 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none z-50">
+        <i class="fa-solid fa-circle-check text-green-400 mr-1"></i> <span id="toastMsg">알림</span>
+    </div>
+
+    <!-- ======================================================================
+         [통합 JavaScript 엔진] 로직 결합 및 실시간 인터랙션 보정 완료
+         ====================================================================== -->
+    <script>
+        // 시크릿 사일런트 퀴즈 엔진 연산 모듈
+        function submitQuiz() {
+            const checkedOption = document.querySelector('input[name="quiz_choice"]:checked');
+            if (!checkedOption) {
+                triggerToast("⚠️ 퀴즈 선택지 중에서 답을 한 가지 선택해 주세요!");
+                return;
+            }
+
+            const chosenValue = checkedOption.value;
+            const modal = document.getElementById('resultModal');
+            const icon = document.getElementById('modalIcon');
+            const title = document.getElementById('modalTitle');
+            const text = document.getElementById('modalText');
+            const modalProfile = document.getElementById('modalProfileCard');
+
+            // 기본 타이틀 성공 서식 적용
+            title.className = "text-base md:text-lg font-black text-emerald-600 mb-1.5";
+
+            if (chosenValue === "4") {
+                icon.innerText = "🎉";
+                title.innerText = "놀라운 눈썰미! 완벽한 정답입니다!";
+                text.innerHTML = "정답입니다! 석래님은 속초를 수호하는 최전방 <strong>육군 22사단(율곡부대)에서 장교로 복무</strong>했습니다. 위수지역 덕분에 구석구석을 순찰하듯 집요하게 탐색해 낸 초특급 로컬 가이드 맵입니다!";
+                modalProfile.classList.remove('hidden');
+                unlockAllProfileGrid();
+            } else {
+                icon.innerText = "😅";
+                title.innerText = "아쉽습니다! 함정에 퐁당 빠지셨네요!";
+                title.className = "text-base md:text-lg font-black text-rose-500 mb-1.5";
+                modalProfile.classList.add('hidden'); 
+                
+                if (chosenValue === "1") {
+                    text.innerHTML = "아쉽게도 오답입니다! 제 고향은 <strong>서울 구로구</strong>입니다. <br><br><span class='text-slate-500 text-[10px] block bg-slate-100 py-1.5 rounded font-medium'>💡 프로필 매트릭스에서 [📍 출생] 카드가 잠금 해제되었습니다.</span>";
+                    unlockSpecificItem("item-birth");
+                } else if (chosenValue === "2") {
+                    text.innerHTML = "아쉽게도 오답입니다! 초/중/고/대학교 모두 서울에서 보냈으며 <strong>이사는 살면서 딱 2번</strong> 진행했습니다.<br><br><span class='text-slate-500 text-[10px] block bg-slate-100 py-1.5 rounded font-medium'>💡 프로필 매트릭스에서 [🚚 이사] 카드가 잠금 해제되었습니다.</span>";
+                    unlockSpecificItem("item-move");
+                } else {
+                    text.innerHTML = "아쉽게도 오답입니다! 놀랍게도 저는 단순 여행 목적으로는 <strong>속초를 단 0회 방문</strong>했습니다!<br><br><span class='text-slate-500 text-[10px] block bg-slate-100 py-1.5 rounded font-medium'>💡 프로필 매트릭스에서 [🏖️ 여행 횟수] 카드가 잠금 해제되었습니다.</span>";
+                    unlockSpecificItem("item-travel");
+                }
+            }
+            modal.classList.remove('hidden');
+        }
+
+        // 오답 처리용 개별 유닛 동적 노출 헬퍼
+        function unlockSpecificItem(itemId) {
+            const targetItem = document.getElementById(itemId);
+            if (targetItem) {
+                targetItem.classList.remove('hidden');
+                targetItem.classList.add('block', 'ring-2', 'ring-oceanBlue', 'scale-[1.01]');
+            }
+        }
+
+        // 정답 매칭 시 프로필 올클리어 스크립트
+        function unlockAllProfileGrid() {
+            const items = ['item-birth', 'item-move', 'item-travel', 'item-career'];
+            items.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.remove('hidden', 'ring-2', 'ring-oceanBlue', 'scale-[1.01]');
+                    if (id === 'item-career') el.classList.add('flex');
+                    else el.classList.add('block');
+                }
+            });
+        }
+
+        // 푸터 연락처 복사 엔진
+        function copyEmailContact() {
+            const emailAddress = "coasterrrrr@gmail.com";
+            const textContainer = document.createElement('textarea');
+            textContainer.value = emailAddress;
+            document.body.appendChild(textContainer);
+            textContainer.select();
+            
+            try {
+                document.execCommand('copy');
+                triggerToast("📋 연락처가 클립보드에 복사되었습니다!");
+            } catch (err) {
+                console.error("복사 실패:", err);
+            } finally {
+                document.body.removeChild(textContainer);
+            }
+        }
+
+        // 알림 토스트 연출 핸들러
+        function triggerToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const msgSpan = document.getElementById('toastMsg');
+            
+            if (toast && msgSpan) {
+                msgSpan.innerText = message;
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100');
+                    toast.classList.add('opacity-0');
+                }, 2500);
+            }
+        }
+
+        // 모달 오프 트리거
+        function closeResultModal() {
+            const modal = document.getElementById('resultModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
