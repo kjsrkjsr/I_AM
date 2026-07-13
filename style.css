@@ -1,16 +1,4 @@
 /* --- style.css --- */
-
-/* 전역 커스텀 마우스 커서 (파란색 기본 닷) */
-body, html {
-    background-color: #F8FAFC;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><circle cx='12' cy='12' r='8' fill='%230077B6' opacity='0.8'/></svg>") 12 12, auto;
-}
-
-/* 링크, 버튼, 호버 타겟용 커스텀 커서 (노란색/남색 포인트 닷) */
-a, button, input, label, .hover-target {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28'><circle cx='14' cy='14' r='12' fill='%23FFD166' opacity='0.9'/><circle cx='14' cy='14' r='4' fill='%2303045E'/></svg>") 14 14, pointer !important;
-}
-
 .wave-bg {
     background: linear-gradient(180deg, #0077B6 0%, #03045E 100%);
 }
@@ -51,19 +39,4 @@ a, button, input, label, .hover-target {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* 배경 은은한 파티클 애니메이션 엔진 */
-.particle {
-    background: rgba(0, 119, 182, 0.25);
-    animation: floatUp linear infinite;
-}
-.dark .particle {
-    background: rgba(255, 209, 102, 0.15);
-}
-@keyframes floatUp {
-    0% { transform: translateY(105vh) scale(0.5); opacity: 0; }
-    10% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
 }

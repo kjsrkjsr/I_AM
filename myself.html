@@ -217,7 +217,18 @@
             </div>
         </div>
     </div>
-
+    <footer class="bg-navyDark text-white pt-10 pb-6 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <span class="text-[10px] font-bold text-oceanLight bg-oceanBlue px-2.5 py-1 rounded-full mb-3 inline-block">SSAFY PARTNERSHIP</span>
+            <h4 class="text-base md:text-lg font-bold mb-2">함께 멋진 프로젝트를 만들어봐요!</h4>
+            
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <a href="https://github.com/kjsrkjsr" target="_blank" class="bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors text-sm"><i class="fa-brands fa-github"></i></a>
+                <button onclick="copyEmailContact()" class="bg-sunYellow text-navyDark hover:bg-sunOrange px-3.5 py-1.5 rounded-full font-bold transition-colors flex items-center gap-1.5 text-xs"><i class="fa-solid fa-paper-plane"></i> 이메일 복사</button>
+            </div>
+            <p class="text-[10px] text-white/30 border-t border-slate-800/60 pt-4">© 2026 Seokrae. Specially Curated for SSAFY Fellowship.</p>
+        </div>
+    </footer>
     <!-- 하단 토스트 팝업 -->
     <div id="toastNotification" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white text-xs px-5 py-2.5 rounded-full opacity-0 z-50 pointer-events-none transition-opacity duration-300"><span id="toastMsg"></span></div>
 
@@ -231,21 +242,27 @@
 
         // 공통 네비게이션 자동 활성화 엔진
         function initNavigationHighlight() {
-            let currentFile = window.location.pathname.split("/").pop() || "home.html";
-            if (currentFile === "index.html" || currentFile === "") currentFile = "home.html";
+    let currentFile = window.location.pathname.split("/").pop() || "home.html";
+    if (currentFile === "index.html" || currentFile === "") currentFile = "home.html";
 
-            document.querySelectorAll('#desktopNav .nav-item').forEach(link => {
-                if (link.getAttribute('data-page') === currentFile) {
-                    link.className = "nav-item text-oceanBlue border-b-2 border-oceanBlue font-bold py-1";
-                }
-            });
-
-            document.querySelectorAll('#mobileNav .nav-item-m').forEach(link => {
-                if (link.getAttribute('data-page') === currentFile) {
-                    link.className = "nav-item-m text-oceanBlue font-bold block py-1";
-                }
-            });
+    // 현재 페이지와 일치하는 메뉴에만 CSS 클래스 적용
+    document.querySelectorAll('#desktopNav .nav-item').forEach(link => {
+        if (link.getAttribute('data-page') === currentFile) {
+            // 활성화 스타일: 파란색 + 굵은 글씨 + 밑줄
+            link.className = "nav-item text-oceanBlue border-b-2 border-oceanBlue font-bold py-1";
+        } else {
+            // 비활성 스타일: 기본 색상
+            link.className = "nav-item text-slate-600 dark:text-slate-300 hover:text-oceanBlue py-1 transition-all";
         }
+    });
+
+    // 모바일 메뉴도 동일한 방식으로 적용 가능
+    document.querySelectorAll('#mobileNav .nav-item-m').forEach(link => {
+        if (link.getAttribute('data-page') === currentFile) {
+            link.className = "nav-item-m text-oceanBlue font-bold block py-1";
+        }
+    });
+}
 
         // 다크모드 제어
         function applyTheme() {
