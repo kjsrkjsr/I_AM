@@ -21,7 +21,7 @@
                         deepNight: '#0A1128'
                     },
                     fontFamily: {
-                        sans: ['SamsungOne', 'One UI Sans', 'Pretendard', '-apple-system', 'sans-serif']
+                        sans: ['SamsungOne', 'One UI Sans', 'Pretendard', '-apple-system', 'system-ui', 'sans-serif'],
                     },
                     animation: {
                         fadeIn: 'fadeIn 0.3s ease-out forwards',
@@ -53,7 +53,7 @@
             <nav id="desktopNav" class="hidden md:flex md:absolute md:left-1/2 md:-translate-x-1/2 space-x-6 text-sm font-semibold text-slate-600 dark:text-slate-300">
                 <a href="home.html" data-page="home.html" class="nav-item py-1 transition-colors hover:text-oceanBlue">홈</a>
                 <a href="introduce.html" data-page="introduce.html" class="nav-item py-1 transition-colors hover:text-oceanBlue">속초 소개</a>
-                <a href="myself.html" data-page="myself.html" class="nav-item py-1 transition-colors hover:text-oceanBlue">내 소개 (퀴즈)</a>
+                <a href="myself.html" data-page="myself.html" class="nav-item py-1 transition-colors hover:text-oceanBlue">내 소개</a>
             </nav>
             
             <div class="flex items-center gap-3 z-10">
@@ -70,11 +70,16 @@
         </div>
 
         <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-[#0F172A] border-t border-slate-100 dark:border-slate-800 shadow-lg absolute w-full left-0 top-full z-50">
-            <nav id="mobileNav" class="flex flex-col px-4 py-3 space-y-3 text-sm font-semibold text-slate-600 dark:text-slate-300">
+            <!-- nav에 text-right를 추가하여 내부 인라인 요소들을 우측 정렬 -->
+            <nav id="mobileNav" class="flex flex-col px-4 py-3 space-y-3 text-sm font-semibold text-slate-600 dark:text-slate-300 text-right">
                 <a href="home.html" data-page="home.html" class="nav-item-m block py-1 transition-colors hover:text-oceanBlue">홈</a>
                 <a href="introduce.html" data-page="introduce.html" class="nav-item-m block py-1 transition-colors hover:text-oceanBlue">속초 소개</a>
                 <a href="myself.html" data-page="myself.html" class="nav-item-m block py-1 transition-colors hover:text-oceanBlue">내 소개 (퀴즈)</a>
-                <button onclick="resetQuizBridge()" class="w-full bg-oceanBlue text-white text-xs font-bold py-2 rounded-xl text-center">퀴즈 리셋하고 풀기 🎁</button>
+
+            <!-- 버튼은 블록 형태이므로 ml-auto(margin-left: auto)를 써서 우측으로 배치 -->
+                <button onclick="resetQuizBridge()" class="w-auto ml-auto bg-oceanBlue text-white text-xs font-bold py-2 px-4 rounded-xl text-center">
+                퀴즈 리셋하고 풀기 🎁
+                </button>
             </nav>
         </div>
     </header>
@@ -242,27 +247,27 @@
 
         // 공통 네비게이션 자동 활성화 엔진
         function initNavigationHighlight() {
-    let currentFile = window.location.pathname.split("/").pop() || "home.html";
-    if (currentFile === "index.html" || currentFile === "") currentFile = "home.html";
+            let currentFile = window.location.pathname.split("/").pop() || "home.html";
+            if (currentFile === "index.html" || currentFile === "") currentFile = "home.html";
 
-    // 현재 페이지와 일치하는 메뉴에만 CSS 클래스 적용
-    document.querySelectorAll('#desktopNav .nav-item').forEach(link => {
-        if (link.getAttribute('data-page') === currentFile) {
-            // 활성화 스타일: 파란색 + 굵은 글씨 + 밑줄
-            link.className = "nav-item text-oceanBlue border-b-2 border-oceanBlue font-bold py-1";
-        } else {
-            // 비활성 스타일: 기본 색상
-            link.className = "nav-item text-slate-600 dark:text-slate-300 hover:text-oceanBlue py-1 transition-all";
-        }
-    });
+            // 현재 페이지와 일치하는 메뉴에만 CSS 클래스 적용
+            document.querySelectorAll('#desktopNav .nav-item').forEach(link => {
+                if (link.getAttribute('data-page') === currentFile) {
+                    // 활성화 스타일: 파란색 + 굵은 글씨 + 밑줄
+                    link.className = "nav-item text-oceanBlue border-b-2 border-oceanBlue font-bold py-1";
+                } else {
+                    // 비활성 스타일: 기본 색상
+                    link.className = "nav-item text-slate-600 dark:text-slate-300 hover:text-oceanBlue py-1 transition-all";
+                }
+            });
 
-    // 모바일 메뉴도 동일한 방식으로 적용 가능
-    document.querySelectorAll('#mobileNav .nav-item-m').forEach(link => {
-        if (link.getAttribute('data-page') === currentFile) {
-            link.className = "nav-item-m text-oceanBlue font-bold block py-1";
+            // 모바일 메뉴도 동일한 방식으로 적용 가능
+            document.querySelectorAll('#mobileNav .nav-item-m').forEach(link => {
+                if (link.getAttribute('data-page') === currentFile) {
+                    link.className = "nav-item-m text-oceanBlue font-bold block py-1";
+                }
+            });
         }
-    });
-}
 
         // 다크모드 제어
         function applyTheme() {
@@ -356,6 +361,12 @@
             ['item-birth','item-move','item-travel','item-career'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
             checkGameState();
             triggerToast("🔄 퀴즈 스코어가 리셋되어 다시 도전 가능합니다!");
+        }
+
+        function copyEmailContact() {
+            navigator.clipboard.writeText("coasterrrrr@gmail.com").then(() => {
+                triggerToast("📋 연락처가 클립보드에 복사되었습니다!");
+            });
         }
 
         // 방명록 모듈

@@ -1,4 +1,16 @@
 /* --- style.css --- */
+nav a {
+    /* 폰트 렌더링을 더 선명하고 일정하게 만드는 설정 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* 글자 간격을 미세하게 조정하여 굵기 차이 시각화 보정 */
+    letter-spacing: -0.01em; 
+}
+
+/* Bold가 너무 굵게 느껴진다면 weight를 미세하게 조절 가능 */
+.font-bold {
+    font-weight: 800 !important; /* 700(기본 볼드) 대신 600으로 살짝 다이어트 */
+}
 .wave-bg {
     background: linear-gradient(180deg, #0077B6 0%, #03045E 100%);
 }
